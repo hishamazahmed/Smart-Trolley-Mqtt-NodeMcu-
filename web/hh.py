@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 client = MongoClient('localhost:27017')
 
-
+#hello
 db=client.hello3
 
 @app.route('/sensor',methods = ['POST', 'GET'])
