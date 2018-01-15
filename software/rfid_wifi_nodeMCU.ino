@@ -5,8 +5,8 @@
 #define SS_PIN 4
 
 
-const char *ssid =  "FreeWifi";        
-const char *pass =  "iotthink";
+const char *ssid =  "DataSoft_WiFi";        //Your Access Point or Personal Hotspot, cannot be longer than 32 characters!
+const char *pass =  "support123";    //Your Access Point or Personal Hotspot password
 const char* serverTS = "api.thingspeak.com";
 String apiKey = "YHICNFP4BXIY4ZV3";          //Insert your Channel API Key here
 
