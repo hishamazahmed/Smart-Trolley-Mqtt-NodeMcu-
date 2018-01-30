@@ -1,7 +1,20 @@
+//NODEMCU-RFID522 pin configuration:
+
+//3.3V-3.3V
+//RST-D1
+//GND-GND
+//MISO-D6
+//MOSI- D7
+//SCK- D5
+//SDA- D2
+
+
+
+
 #include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
-//real bhaa
+
 #include <RFID.h>
 #include <SPI.h>
 #define RST_PIN 5
@@ -14,7 +27,7 @@ void setup() {
   SPI.begin(); 
   rfid.init(); 
   Serial.begin(115200);                                  //Serial connection
-  WiFi.begin("FreeWifi", "iotthink");   //WiFi connection
+  WiFi.begin("DataSoft_WiFi", "support123");   //WiFi connection
  
   while (WiFi.status() != WL_CONNECTED) {  //Wait for the WiFI connection completion
     delay(500);
@@ -51,7 +64,7 @@ void loop() {
  
    HTTPClient http;    //Declare object of class HTTPClient
  
-   http.begin("http://192.168.0.103:5000/sensor");      //Specify request destination
+   http.begin("http://192.168.4.37:5000/sensor");      //Specify request destination
    http.addHeader("Content-Type", "application/json");  //Specify content-type header
  
    int httpCode = http.POST(JSONmessageBuffer);   //Send the request
